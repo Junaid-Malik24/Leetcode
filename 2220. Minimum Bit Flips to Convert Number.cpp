@@ -45,9 +45,9 @@ public:
         int nx=0;
         for(int i=0;i<32;i++)
         {
-            int x=start&(1<<i);
-            int y=goal&(1<<i);
-
+            bool x=start&(1<<i);
+            bool y=goal&(1<<i);
+            //left rotate gives 2^i and '&' operator checks if the bit in start/goal is '1' or '0'
             if(x!=y)
             nx++;
 
