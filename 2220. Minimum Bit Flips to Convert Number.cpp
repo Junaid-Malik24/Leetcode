@@ -50,7 +50,6 @@ public:
             //left rotate gives 2^i and '&' operator checks if the bit in start/goal is '1' or '0'
             if(x!=y)
             nx++;
-
         }
         return nx;
     }
