@@ -66,4 +66,34 @@ public:
     }
 };
 
+//Approach 3 
+class Solution {
+public:
+    int findTheLongestSubstring(string s) {
+        vector<int> firstOccurrence(32, -1);
+        firstOccurrence[0] = 0; 
+        int mask = 0;  
+        int maxLength = 0;
+        for (int i = 0; i < s.size(); ++i) {
+            if (s[i] == 'a') {
+                mask ^= (1 << 0); 
+            } else if (s[i] == 'e') {
+                mask ^= (1 << 1);  
+            } else if (s[i] == 'i') {
+                mask ^= (1 << 2);  
+            } else if (s[i] == 'o') {
+                mask ^= (1 << 3);  
+            } else if (s[i] == 'u') {
+                mask ^= (1 << 4); 
+            }
+            if (firstOccurrence[mask] != -1) {
+                maxLength = max(maxLength, i + 1 - firstOccurrence[mask]);
+            } else {
+                firstOccurrence[mask] = i + 1;
+            }
+        }
+        return maxLength;
+    }
+};
+
 //Had to learn maps and bit masking for this so took a little help from gfg
