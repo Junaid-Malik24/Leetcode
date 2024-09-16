@@ -1,5 +1,6 @@
 //leetcode: https://leetcode.com/problems/find-the-longest-substring-containing-vowels-in-even-counts/description/?envType=daily-question&envId=2024-09-15
 
+
 //Approach 1(Seperate Function for bit Masking)
 class Solution {
 public:
@@ -41,6 +42,7 @@ public:
     }
 };
 
+
 //Approach 2
 class Solution {
 public:
@@ -65,6 +67,7 @@ public:
     return maxLength;
     }
 };
+
 
 //Approach 3 
 class Solution {
