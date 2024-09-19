@@ -47,20 +47,24 @@ public:
  */
 class Solution {
 public:
-    void buildPaths(TreeNode* root, string path, vector<string> &result) {
-        if (!root) return;
-        path += to_string(root->val);
-        if (!root->left && !root->right) {
-            result.push_back(path);
-        } else {
-            path += "->";
-            buildPaths(root->left, path, result);
-            buildPaths(root->right, path, result);
-        }
-    }
     vector<string> binaryTreePaths(TreeNode* root) {
         vector<string> result;
-        buildPaths(root, "", result);
+        if (!root) {
+            return result;
+        }
+        if (!root->left && !root->right) {
+            result.push_back(to_string(root->val));
+            return result;
+        }
+        string path = to_string(root->val) + "->";
+        vector<string> leftPaths = binaryTreePaths(root->left);
+        for (string &pathLeft : leftPaths) {
+            result.push_back(path + pathLeft);
+        }
+        vector<string> rightPaths = binaryTreePaths(root->right);
+        for (string &pathRight : rightPaths) {
+            result.push_back(path + pathRight);
+        }
         return result;
     }
 };
