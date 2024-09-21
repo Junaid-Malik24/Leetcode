@@ -1,4 +1,4 @@
-//leetcode: https://leetcode.com/problems/shortest-palindrome/?envType=daily-question&envId=2024-09-22
+//leetcode: https://leetcode.com/problems/shortest-palindrome/?envType=daily-question&envId=2024-09-20
 
 class Solution {
 public:
