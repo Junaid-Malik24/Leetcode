@@ -1,6 +1,5 @@
 //leetcode: https://leetcode.com/problems/find-the-length-of-the-longest-common-prefix/?envType=daily-question&envId=2024-09-24
-#include <bits/stdc++.h>
-using namespace std;
+
 class Solution {
 public:
     int longestCommonPrefix(vector<int>& arr1, vector<int>& arr2) {
