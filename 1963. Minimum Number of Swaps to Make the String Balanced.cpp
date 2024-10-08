@@ -18,7 +18,8 @@ public:
         }
         return ceil(result/2);
     }
-};
+}; 
+
 
 //Approach 2 (Using Stack)
 class Solution {
