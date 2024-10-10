@@ -6,12 +6,12 @@ public:
         int n = nums.size();
         int result = 0;
         stack<int> st;
-        for (int i = 0; i < n; ++i) {
+        for (int i = 0; i < n; i++) {
             if (st.empty() || nums[i] < nums[st.top()]) {
                 st.push(i);
             }
         }
-        for (int j = n - 1; j >= 0; --j) {
+        for (int j = n - 1; j >= 0; j--) {
             while (!st.empty() && nums[j] >= nums[st.top()]) {
                 if(result<j-st.top())
                 result=j-st.top();
